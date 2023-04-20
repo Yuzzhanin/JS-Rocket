@@ -4,28 +4,30 @@
 <head>
     <title>Rockets Launch sequence</title>
     <link rel="stylesheet" type="text/css" href="css/rocket.css">
+
 </head>
 
 <body class="body-state1">
     <div class="left">
         <div class="state1">
             <h1>JS Rocket Lacnuch!</h1>
-            <a href="#" class="button" onclick="StartCountDown();">Launch!</a>
+            <a href="#" class="button" onclick="changeState(2);">Launch!</a>
         </div>
         <div class="state2">
             <h1 id="countdown">10</h1>
-            <a href="#" class="button" onclick="abort();">Launch!</a>
+            <a href="#" class="button" onclick="changeState(1);">Launch!</a>
         </div>
         <div class="state3">
             <h1>Lift off!</h1>
+            <a href="#" class="button" onclick="changeState(1);">Abort!</a>
         </div>
         <div class="state4">
             <h1>Well done!</h1>
-            <a href="#" class="button" onclick="doItAgain();">Do it agian!</a>
+            <a href="#" class="button" onclick="changeState(2);">Do it agian!</a>
         </div>
         <div class="state5">
             <h1>Oh no!</h1>
-            <a href="#" class="button" onclick="doItAgain();">Try agian!</a>
+            <a href="#" class="button" onclick="changeState(2);">Try agian!</a>
         </div>
     </div>
 
@@ -33,6 +35,7 @@
         <div class="ground"></div>
         <div class="rocket"></div>
     </div>
+    <script type="text/javascript" src="js/rocket.js"></script>
 </body>
 
 </html>
