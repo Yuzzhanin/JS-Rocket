@@ -6,15 +6,22 @@ var timer = null;
 function changeState(state) {
     document.body.className = 'body-state' + state;
     clearInterval(timer);
+    countdownNumber = 10;
+    document.getElementById('countdown').innerHTML = countdownNumber;
+    countdownNumber = countdownNumber - 1;
+
+    //state 2
     if (state == 2) {
         timer = setInterval(function () {
-            document.getElementById('countdown').innerHTML = countdownNumber;
             countdownNumber = countdownNumber - 1;
+            document.getElementById('countdown').innerHTML = countdownNumber;
+            //state 3
             if (countdownNumber <= 0) {
                 changeState(3);
             }
-        }, 500);
+        }, 1000);
     }
+    //state 4-5
     else if (state == 3) {
         var success = setTimeout(function () {
             var randomNumber = Math.round(Math.random() * 10);
@@ -29,6 +36,6 @@ function changeState(state) {
                 //do somthing else
                 changeState(5)
             }
-        })
+        }, 5000)
     }
 }
