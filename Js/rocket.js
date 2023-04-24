@@ -19,6 +19,19 @@ function changeState(state) {
             if (countdownNumber <= 0) {
                 changeState(3);
             }
+            //success
+            if (countdownNumber > 4 && countdownNumber <= 7) {
+                //cant-wait
+                document.getElementById('nervous').className = 'nervous show';
+            } else {
+                document.getElementById('nervous').className = 'nervous';
+            }
+            if (countdownNumber > 1 && countdownNumber <= 4) {
+                //nervous
+                document.getElementById('cant-wait').className = 'cant-wait show';
+            } else {
+                document.getElementById('cant-wait').className = 'cant-wait';
+            }
         }, 500);
     }
     //state 4-5
@@ -26,8 +39,6 @@ function changeState(state) {
         var success = setTimeout(function () {
             var randomNumber = Math.round(Math.random() * 10);
             console.log('randomNumber:', randomNumber)
-
-            //success
             if (randomNumber > 5) {
                 //do somthing
                 changeState(4)
