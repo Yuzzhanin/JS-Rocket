@@ -16,6 +16,11 @@ function changeState(state) {
             countdownNumber = countdownNumber - 1;
             document.getElementById('countdown').innerHTML = countdownNumber;
 
+            //state 3
+            if (countdownNumber <= 0) {
+                changeState(3);
+            }
+
             //success
             if (countdownNumber > 4 && countdownNumber <= 7) {
                 //cant-wait
@@ -31,11 +36,6 @@ function changeState(state) {
             }
             else {
                 document.getElementById('cant-wait').className = 'cant-wait';
-            }
-
-            //state 3
-            if (countdownNumber <= 0) {
-                changeState(3);
             }
         }, 500);
     }
