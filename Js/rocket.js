@@ -15,22 +15,27 @@ function changeState(state) {
         timer = setInterval(function () {
             countdownNumber = countdownNumber - 1;
             document.getElementById('countdown').innerHTML = countdownNumber;
-            //state 3
-            if (countdownNumber <= 0) {
-                changeState(3);
-            }
+
             //success
             if (countdownNumber > 4 && countdownNumber <= 7) {
                 //cant-wait
                 document.getElementById('nervous').className = 'nervous show';
-            } else {
+            }
+            else {
                 document.getElementById('nervous').className = 'nervous';
             }
+
             if (countdownNumber > 1 && countdownNumber <= 4) {
                 //nervous
                 document.getElementById('cant-wait').className = 'cant-wait show';
-            } else {
+            }
+            else {
                 document.getElementById('cant-wait').className = 'cant-wait';
+            }
+
+            //state 3
+            if (countdownNumber <= 0) {
+                changeState(3);
             }
         }, 500);
     }
