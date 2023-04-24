@@ -19,7 +19,7 @@ function changeState(state) {
             if (countdownNumber <= 0) {
                 changeState(3);
             }
-        }, 1000);
+        }, 500);
     }
     //state 4-5
     else if (state == 3) {
@@ -36,6 +36,6 @@ function changeState(state) {
                 //do somthing else
                 changeState(5)
             }
-        }, 5000)
+        }, 2000)
     }
 }
